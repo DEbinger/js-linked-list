@@ -37,12 +37,13 @@ function linkedListGenerator(){
 
 	function get(number) {
 		let curNode = head;
-		for (var i = 0; i < number.length; i++)
-		/*	number[i]
-		 } (i > 0, i++)
-			i = number[i].next;
-			return i, number[i].value*/;
-		
+		for (let i = 0; i < number; i++)
+			if (curNode.next === null) {
+				return false;
+			}else{
+				curNode = curNode.next;	
+			}
+		return curNode;
 	}
 
 	function insert() {
