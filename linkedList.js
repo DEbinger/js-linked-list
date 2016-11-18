@@ -4,52 +4,64 @@
  * @return {Object} an object exposing methods to be used to manipulate a linked list
  */
 function linkedListGenerator(){
-	var head = null;
+	let head = null;
+
 	function getHead() {
 		return head;
 	}
+
 	function getTail() {
-		var curNode = head;
+		let curNode = head;
 		while( curNode !== null){
 			if(curNode.next !== null){
 				curNode = curNode.next;
 			}else{
-			return curNode;
+				return curNode;
 			}
-
 		}
 		return curNode;
 	}
 	function add(newValue){
-		var tail = getTail();
-		var newNode = {
+		let tail = getTail();
+		let newNode = {
 			value : newValue,
 			next : null
 		};
-			if (tail !== null) {
-				curNode = curNode.newNode;
-			}else{
-			return newNode;
-			}
-}
-/*	function remove() {
-		newNode.remove();
-	}*/
-	function get() {
-		// body...
+		if (tail === null) {
+			head = newNode;
+		}else{
+			tail.next = newNode;
+		}
+		return newNode;
 	}
+
+	function get(number) {
+		let curNode = head;
+		for (var i = 0; i < number.length; i++)
+		/*	number[i]
+		 } (i > 0, i++)
+			i = number[i].next;
+			return i, number[i].value*/;
+		
+	}
+
 	function insert() {
 		// body...
 
 	}
+	function remove() {
+		newNode.remove();
+	}
+
 	return {getHead: getHead,
 			getTail: getTail,
 			add: add,
+			get: get
 			};
 	
 }
-/*var ll = linkedListGenerator();
-ll.add();
+/*let ll = linkedListGenerator();
+ll.add('dog');
 ll.add();
 ll.add();
 ll.add();
@@ -58,6 +70,5 @@ ll.add();
 ll.add();
 var theHead = 
 var theTail = 
-console.log(theHead);
+console.log(head);*/
 
-*/
