@@ -38,26 +38,52 @@ function linkedListGenerator(){
 	function get(number) {
 		let curNode = head;
 		for (let i = 0; i < number; i++)
-			if (curNode.next === null) {
-				return false;
-			}else{
-				curNode = curNode.next;	
-			}
+		if (curNode.next === null) {
+			return false;
+		}else{
+			curNode = curNode.next;	
+		}
 		return curNode;
 	}
 
-	function insert() {
-		// body...
-
+	function insert(value, index) {
+		let curNode = head;
+		for (let i = 0; i < number; i++)
+		if (curNode.next === null) {
+			return false;
+		}else{
+			curNode = curNode.next;	
+		}
+		return curNode;
 	}
-	function remove() {
-		newNode.remove();
-	}
 
+	function remove(number){
+		let priorNode = get(number-1);
+		let curNode = get(number);
+
+       	if(curNode === false){
+         	return false;
+       	}
+       
+       	if(curNode.next === null){
+       		priorNode.next = null;
+       		return;
+       	}
+       
+       	if(number === 0){
+        	head = head.next;
+       	}
+
+       	priorNode.next = curNode.next;
+
+    }
+	
 	return {getHead: getHead,
 			getTail: getTail,
 			add: add,
-			get: get
+			get: get,
+			remove: remove,
+			insert: insert
 			};
 	
 }
